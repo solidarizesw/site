@@ -4,6 +4,7 @@ body{
 	text-align: justify;
 	background-color: #BEBEBE;
 	color: white;
+	font-family: 'Open Sans', sans-serif; 
 }
 
 a{ text-decoration: none; }
@@ -11,12 +12,25 @@ p{ color: white; }
 
 h1, h2{
 	border-bottom: 5px solid #0f7a8a;
+
 }
 
 section, #header-banner, footer{
 	text-align: center;
 	color: #0f7a8a;
 }
+
+section{ font-family: 'Arimo', sans-serif; }
+
+/* Estilo especifico */
+h1#title{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 60px;
+}
+
+
+
+
 
 
 
