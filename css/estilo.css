@@ -2,9 +2,16 @@
 
 body{
 	text-align: justify;
-	background-color: #696969;
+	background-color: #BEBEBE;
 	color: black;
 }
+
+a{
+	text-decoration: none;
+}
+
+
+
 
 div#header-banner{
 	text-align: center;
@@ -13,4 +20,6 @@ div#header-banner{
 
 div#header-banner h1{
 	color: #0f7a8a;
+	border-bottom: 5px solid #0f7a8a;
 }
+
