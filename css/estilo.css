@@ -16,15 +16,18 @@ section, div#header-banner, footer{
 	color: #0f7a8a;
 }
 
-/*Estilo da header */
-
-#header-banner h1{
-	border-bottom: 5px solid #0f7a8a;
-}
 
 #header-banner p, section#sobre p, section#projetosF p{
 	color: white;
 }
+
+h1, h2{
+	border-bottom: 5px solid #0f7a8a;
+}
+
+	
+
+
 
 
 
