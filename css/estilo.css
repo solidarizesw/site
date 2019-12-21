@@ -6,8 +6,11 @@ body{
 	color: white;
 }
 
-a{
-	text-decoration: none;
+a{ text-decoration: none; }
+p{ color: white; }
+
+h1, h2{
+	border-bottom: 5px solid #0f7a8a;
 }
 
 section, div#header-banner, footer{
@@ -16,13 +19,7 @@ section, div#header-banner, footer{
 }
 
 
-#header-banner p, section#sobre p, section#projetosF p{
-	color: white;
-}
 
-h1, h2{
-	border-bottom: 5px solid #0f7a8a;
-}
 
 	
 
