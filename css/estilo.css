@@ -1,25 +1,30 @@
 @charset 'utf-8';
 
+/* Estilo geral */
 body{
 	text-align: justify;
 	background-color: #BEBEBE;
-	color: black;
+	color: white;
 }
 
 a{
 	text-decoration: none;
 }
 
-
-
-
-div#header-banner{
+section, div#header-banner, footer{
 	text-align: center;
-
+	color: #0f7a8a;
 }
 
-div#header-banner h1{
-	color: #0f7a8a;
+/*Estilo da header */
+
+#header-banner h1{
 	border-bottom: 5px solid #0f7a8a;
 }
+
+#header-banner p, section#sobre p, section#projetosF p{
+	color: white;
+}
+
+
 
