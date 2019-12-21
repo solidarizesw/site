@@ -1,0 +1,16 @@
+@charset 'utf-8';
+
+body{
+	text-align: justify;
+	background-color: #696969;
+	color: black;
+}
+
+div#header-banner{
+	text-align: center;
+
+}
+
+div#header-banner h1{
+	color: #0f7a8a;
+}
