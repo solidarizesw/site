@@ -7,13 +7,15 @@ body{
 	font-family: 'Open Sans', sans-serif; 
 }
 
-a{ text-decoration: none; }
-p{ color: white; }
+a{ 
+	text-decoration: none;
+	color: white;
+ }
 
-h1, h2{
-	border-bottom: 5px solid #0f7a8a;
-
-}
+ a:hover{
+	color: #BEBEBE;
+	transition: 1s;
+ }
 
 section, #header-banner, footer{
 	text-align: center;
@@ -21,12 +23,26 @@ section, #header-banner, footer{
 }
 
 section{ font-family: 'Arimo', sans-serif; }
+p{ color: white; }
+li{ list-style: none; }
+h1, h2{ border-bottom: 5px solid #0f7a8a;}
 
 /* Estilo especifico */
+
 h1#title{
 	font-family: 'Montserrat', sans-serif;
 	font-size: 60px;
 }
+
+/* Menu */
+nav ul li{
+	background-color: #0f7a8a;
+	display: inline;
+	padding: 8px;
+	
+}
+
+
 
 
 
