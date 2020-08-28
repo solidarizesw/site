@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+.background-gray{
+    background-color: #a6a6a6;
+}
+
+.center{
+    text-align: center;
+}
+
+.color-green{
+    text-align: center;
+    color: #0f7a8a;
+    font-weight: bolder;
+    border-bottom: 5px #0f7a8a solid;
+}
