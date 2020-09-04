@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "solidarize-sw"
+    }
+  },
+  "defaultProject": "solidarize-sw",
+  "cli": {
+    "analytics": "051c4cf7-5b8b-4f4b-9168-4bd0c34b7398"
+  }
 }
