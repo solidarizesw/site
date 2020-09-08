@@ -3,10 +3,47 @@
     <div class="row">
       <div class="col-lg-8 mx-auto">
         
-        <h2 class= "color-green">Cadastro de Projetos:</h2>
-        
-        <p class="lead center">Necessário criar formulário com os principais dados para cadastro de projetos, tais como: nome, email e descrição sobre o projeto. </p>
-      
+        <h2 class= "color-green titulos">Cadastro de Projetos:</h2><br><br>
+
+        <!-- Form em bootstrap -->
+        <form>
+          <div class="form-group row">
+            <label for="nome-proj" class="col-sm-2 col-form-label color-green">Nome do Projeto:</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="nome-proj" placeholder="Nome do Projeto">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="email-proj" class="col-sm-2 col-form-label color-green">Email:</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="email-proj" placeholder="Email">
+            </div>
+          </div>
+
+          <!-- Caixa de texto -->
+          <div class="form-group row">
+            <label for="caixatxt-proj" class="col-sm-2 col-form-label color-green">Descrição:</label>
+            <div class="col-sm-10">
+              <textarea id="caixatxt-proj" class="md-textarea form-control" rows="3"></textarea>
+            </div>
+          </div>
+
+          <!-- Botões -->
+          
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+          </div>  
+      </form>
+
+
+
+
+
+
+
       </div>
     </div>
   </div>

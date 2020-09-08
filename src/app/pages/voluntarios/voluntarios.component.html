@@ -2,8 +2,70 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h2 class="color-green">Participe!</h2>
-          <p class="lead center text-white">Formulario para cadastrar novos participantes, com os campos: nome, email, curso e a motivação para fazer parte do projeto</p>
+          <h2 class="color-green titulos">Participe!</h2><br>
+
+            <!-- Form em bootstrap -->
+            <form>
+              <div class="form-group row">
+                <label for="nome-volunt" class="col-sm-2 col-form-label color-green">Nome:</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="nome-volunt" placeholder="Nome">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="email-volunt" class="col-sm-2 col-form-label color-green">Email:</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="email-volunt" placeholder="Email">
+                </div>
+              </div>
+
+                <fieldset class="form-group">
+                <div class="row">
+                  <legend class="col-form-label col-sm-2 pt-0 color-green">Curso:</legend>
+                  <div class="col-sm-10">
+                   
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="curso" id="sist-comp" value="sistema-computacao" checked>
+                      <label class="form-check-label" for="sist-comp">
+                        Sistemas de Computação
+                      </label>
+                    </div>
+                   
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="curso" id="sist-inf" value="sistema-informacao">
+                      <label class="form-check-label" for="sist-inf">
+                        Sistemas de Informação
+                      </label>
+                    </div>
+                    
+                    <div class="form-check disabled">
+                      <input class="form-check-input" type="radio" name="curso" id="ciencia-comp" value="ciencia-computacao">
+                      <label class="form-check-label" for="ciencia-comp">
+                        Ciência da Computação
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- Caixa de texto -->
+              <div class="form-group row">
+                <label for="caixatxt-volunt" class="col-sm-2 col-form-label color-green">Motivação:</label>
+                <div class="col-sm-10">
+                  <textarea id="caixatxt-volunt" class="md-textarea form-control" rows="3"></textarea>
+                </div>
+              </div>
+
+              <!-- Botões -->
+              
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+              </div>  
+          </form>
+
         </div>
       </div>
     </div>
