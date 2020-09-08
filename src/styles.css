@@ -8,9 +8,12 @@
     text-align: center;
 }
 
-.color-green{
-    text-align: center;
+.color-green, .titulos{
     color: #0f7a8a;
     font-weight: bolder;
+}
+
+.titulos{
+    text-align: center;
     border-bottom: 5px #0f7a8a solid;
 }
