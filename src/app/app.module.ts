@@ -12,6 +12,7 @@ import { SobreComponent } from './pages/sobre/sobre.component';
 import { VoluntariosComponent } from './pages/voluntarios/voluntarios.component';
 import { ParticipantesComponent } from './pages/participantes/participantes.component';
 import { AdminComponent } from './pages/admin/admin.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AdminComponent } from './pages/admin/admin.component';
     SobreComponent,
     VoluntariosComponent,
     ParticipantesComponent,
-    AdminComponent
+    AdminComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
