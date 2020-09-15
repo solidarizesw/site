@@ -11,6 +11,7 @@ import { ServicosComponent } from './pages/servicos/servicos.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
 import { VoluntariosComponent } from './pages/voluntarios/voluntarios.component';
 import { ParticipantesComponent } from './pages/participantes/participantes.component';
+import { AdminComponent } from './pages/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ParticipantesComponent } from './pages/participantes/participantes.comp
     ServicosComponent,
     SobreComponent,
     VoluntariosComponent,
-    ParticipantesComponent
+    ParticipantesComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
