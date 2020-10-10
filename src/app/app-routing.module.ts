@@ -13,20 +13,13 @@ import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   {path : '', component: HeaderComponent},
-
   {path : 'sobre', component: SobreComponent },
- 
   {path : 'participantes', component : ParticipantesComponent},
-  
   {path : 'servicos', component: ServicosComponent},
-  
   {path : 'voluntarios', component : VoluntariosComponent},
-  
   {path : 'cadastro_proj', component : CadastroComponent},
-  
   {path : 'contato', component: CadastroComponent},
-  
-  {path :'login', component: LoginComponent},
+  {path : 'login', component: LoginComponent},
 ];
 
 
