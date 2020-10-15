@@ -1,3 +1,4 @@
+import { ContatoComponent } from './pages/contato/contato.component';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -13,20 +14,13 @@ import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   {path : '', component: HeaderComponent},
-
   {path : 'sobre', component: SobreComponent },
- 
   {path : 'participantes', component : ParticipantesComponent},
-  
   {path : 'servicos', component: ServicosComponent},
-  
   {path : 'voluntarios', component : VoluntariosComponent},
-  
   {path : 'cadastro_proj', component : CadastroComponent},
-  
-  {path : 'contato', component: CadastroComponent},
-  
-  {path :'login', component: LoginComponent},
+  {path : 'contato', component: ContatoComponent},
+  {path : 'login', component: LoginComponent},
 ];
 
 
