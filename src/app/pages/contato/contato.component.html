@@ -1,10 +1,44 @@
 <section id="contato">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2 class="color-green titulos">Contato</h2>
-          <p class="lead center"> Informações para entrar em contato com o projeto.</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+
+        <h2 class= "color-green titulos">Contato:</h2><br><br>
+
+        <form>
+          <div class="form-group row">
+            <label for="nome-proj" class="col-sm-2 col-form-label color-green">Nome Completo:</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="nome-contato" name="nome-contato" placeholder="Nome Completo" required>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="email-proj" class="col-sm-2 col-form-label color-green">Email:</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="email-contato" name="email-contato" placeholder="Email" required>
+            </div>
+          </div>
+
+          <!-- Caixa de texto -->
+          <div class="form-group row">
+            <label for="caixatxt-proj" class="col-sm-2 col-form-label color-green">Mensagem:</label>
+            <div class="col-sm-10">
+              <textarea id="mensagem-contato" name="mensagem-contato" class="md-textarea form-control" rows="3" required></textarea>
+            </div>
+          </div>
+
+          <!-- Botão -->
+          <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Enviar</button>
+
+        </form>
+        <!-- Midias Sociais -->
+        <div class="template-demo center">
+          <a href="http://www.facebook.com/solidarizesw" target="_blank"><button type="button" class="btn btn-social-icon btn-outline-facebook"><i class="fa fa-facebook"></i></button></a>
+          <a href="http://twitter.com/solidarizesw" target="_blank"><button type="button" class="btn btn-social-icon btn-outline-twitter"><i class="fa fa-twitter"></i></button></a>
+          <a href="http://www.instagram.com/solidarizesw/" target="_blank"><button type="button" class="btn btn-social-icon btn-outline-instagram"><i class="fa fa-instagram"></i></button></a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
