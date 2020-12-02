@@ -10,6 +10,7 @@ import { ServicosComponent } from './pages/servicos/servicos.component';
 import { VoluntariosComponent } from './pages/voluntarios/voluntarios.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { LoginComponent } from './pages/login/login.component';
+import { AdminComponent } from './pages/admin/admin.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path : 'voluntarios', component : VoluntariosComponent},
   {path : 'cadastro_proj', component : CadastroComponent},
   {path : 'contato', component: ContatoComponent},
+  {path : 'admin', component: AdminComponent},
   {path : 'login', component: LoginComponent},
 ];
 
