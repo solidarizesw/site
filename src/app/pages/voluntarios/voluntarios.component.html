@@ -38,30 +38,35 @@
                 <div class="col-sm-10">
 
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="curso" id="sist-comp" value="sistema-computacao" checked>
+                    <input class="form-check-input" type="radio" [(ngModel)]="volunt.curso" #curso="ngModel" required class="form-check-input" [ngClass]="{ 'is-invalid': f.submitted && curso.invalid }" name="curso" id="sist-comp" value="Ciência da Computação" checked>
                     <label class="form-check-label" for="sist-comp">
                       Ciência da Computação
                     </label>
                   </div>
 
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="curso" id="sist-inf" value="sistema-informacao">
+                    <input class="form-check-input" type="radio" [(ngModel)]="volunt.curso" #curso="ngModel" required class="form-check-input" [ngClass]="{ 'is-invalid': f.submitted && curso.invalid }" name="curso" id="sist-comp" value="Sistemas de Computação">
                     <label class="form-check-label" for="sist-inf">
                       Sistemas de Computação
                     </label>
                   </div>
 
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="curso" id="ciencia-comp" value="ciencia-computacao">
+                    <input class="form-check-input" type="radio" [(ngModel)]="volunt.curso" #curso="ngModel" required class="form-check-input" [ngClass]="{ 'is-invalid': f.submitted && curso.invalid }" name="curso" id="sist-comp" value="Sistemas de Informação">
                     <label class="form-check-label" for="ciencia-comp">
                       Sistemas de Informação
                     </label>
                   </div>
 
+
+
                   <div class="form-check disabled">
-                    <input type="radio" name="curso" id="curso" value="others" class="form-check-input">
-                    <input type="curso-outro" name="curso-outro" type="text" value="" placeholder="Outro" class="form-check-label">
+                      <!-- entender como funciona o campo outro-->
                   </div>
+
+
+
+
                 </div>
               </div>
             </fieldset>
@@ -77,15 +82,14 @@
 
             <!-- Caixa de texto -->
             <div class="form-group">
-              <label for="caixatxt-volunt" class="col-sm-2 col-form-label color-green">Motivação</label>
-              <textarea id="caixatxt-volunt" class="md-textarea form-control" [(ngModel)]="volunt.motivacao" #motivacao="ngModel" [ngClass]="{ 'is-invalid': f.submitted && motivacao.invalid }" rows="3" placeholder="Seus interesses e motivações para participar do projeto" required></textarea>
-            <!-- Mensagem de erro -->
-            <div *ngIf="f.submitted && motivacao.invalid" class="invalid-feedback">
-              <div *ngIf="motivacao.errors.required">Esse campo é obrigatório</div>
-            </div>
+              <label for="caixatxt" class="col-sm-2 col-form-label color-green">Motivação</label>
+              <textarea [(ngModel)]="volunt.motivacao" id="caixatxt" name="caixatxt" #motivacao="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && motivacao.invalid }" class="form-control"></textarea>
 
+              <!-- Mensagens de erro -->
+              <div *ngIf="f.submitted && motivacao.invalid" class="invalid-feedback">
+                <div *ngIf="motivacao.errors.required">Esse campo é obrigatório</div>
+              </div>
             </div>
-
 
 
             <button type="submit" class="btn btn-primary btn-add-car">Salvar</button>
