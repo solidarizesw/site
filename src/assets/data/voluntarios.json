@@ -17,11 +17,20 @@
       "status": "aprovado"
     },
     {
-      "nome": "testando1",
-      "email": "testando@gmail.com",
-      "curso": "Sistemas de Computação",
-      "motivacao": "aqui vai um texto ",
-      "id": 4
+      "nome": "um nome",
+      "email": "testando@gmail2.com",
+      "motivacao": "testando aqui",
+      "status": "reprovado",
+      "curso": "Ciência da Computação",
+      "id": 5
+    },
+    {
+      "nome": "aqui",
+      "email": "aqui@gmail.com",
+      "curso": "arquitetura",
+      "motivacao": "apenas testando",
+      "status": "reprovado",
+      "id": 6
     }
   ]
 }
