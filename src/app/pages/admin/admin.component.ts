@@ -8,6 +8,7 @@ import { NgForm } from '@angular/forms';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
+
 export class AdminComponent implements OnInit {
 
   volunt = {} as Voluntarios;
@@ -58,3 +59,4 @@ cleanForm(form: NgForm){
 }
 
 } // fim da classe
+
