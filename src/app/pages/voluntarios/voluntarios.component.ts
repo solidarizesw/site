@@ -15,21 +15,18 @@ export class VoluntariosComponent implements OnInit {
 
   constructor(private voluntServ: VoluntariosService) {}
 
-  ngOnInit(){
-    this.getVolunt();
+ ngOnInit(){
+   this.getVolunt();
   }
 
-  saveVolunt(form: NgForm){
-    if(this.volunt.id !== undefined){
-      this.voluntServ.updateVolunt(this.volunt).subscribe(() => {
-        this.cleanForm(form);
-      });
-    }else{
+  // apenas salvar o voluntario
+  salvarVoluntario(form: NgForm){
+    if(this.volunt.id == undefined){
       this.voluntServ.saveVolunt(this.volunt).subscribe(() => {
         this.cleanForm(form);
       });
     }
-  } // fim do saveVolunt
+  }
 
   // mostra todos os voluntarios registrados
   getVolunt(){
@@ -38,19 +35,13 @@ export class VoluntariosComponent implements OnInit {
     });
   } // fim do getVolunt
 
-// edição de algum dado fornecido pelo voluntario
-editVolunt(volunt: Voluntarios){
-  this.volunt = { ...volunt };
-} // fim do editVolunt
 
-// limpar o formulario
-cleanForm(form: NgForm){
-  this.getVolunt();
-  form.resetForm();
-  this.volunt = {} as Voluntarios;
-}
-
-
+  // limpar o formulario
+  cleanForm(form: NgForm){
+    this.getVolunt();
+    form.resetForm();
+    this.volunt = {} as Voluntarios;
+  }
 
 
 } // fim da classe
