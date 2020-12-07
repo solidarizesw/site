@@ -64,9 +64,6 @@
                       <!-- entender como funciona o campo outro-->
                   </div>
 
-
-
-
                 </div>
               </div>
             </fieldset>
@@ -82,7 +79,7 @@
 
             <!-- Caixa de texto -->
             <div class="form-group">
-              <label for="caixatxt" class="col-sm-2 col-form-label color-green">Motivação</label>
+              <label for="caixatxt" class="col-sm-2 col-form-label color-green">Motivação:</label>
               <textarea [(ngModel)]="volunt.motivacao" id="caixatxt" name="caixatxt" #motivacao="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && motivacao.invalid }" class="form-control"></textarea>
 
               <!-- Mensagens de erro -->
@@ -90,6 +87,19 @@
                 <div *ngIf="motivacao.errors.required">Esse campo é obrigatório</div>
               </div>
             </div>
+
+            <!-- Status -->
+            <div class="form-group">
+              <label for="name-status" class="col-sm-2 col-form-label color-green">Status:</label>
+              <input class="form-control" required class="form-control" id="status-volunt" name="status-volunt" type="text" [(ngModel)]="volunt.status" #status="ngModel" [ngClass]="{ 'is-invalid': f.submitted && status.invalid }">
+
+              <!-- Mensagens de erro -->
+              <div *ngIf="f.submitted && motivacao.invalid" class="invalid-feedback">
+                <div *ngIf="motivacao.errors.required">Esse campo é obrigatório</div>
+              </div>
+
+            </div>
+
 
 
             <button type="submit" class="btn btn-primary btn-add-car">Salvar</button>
