@@ -15,7 +15,7 @@ constructor(private HttpClient: HttpClient) { }
   // headers
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
-  } // fim do httpOptions
+  }// fim do httpOptions
 
   // Mostra todos os voluntarios
 getVolunt(): Observable<Voluntarios[]>{
@@ -63,8 +63,7 @@ deleteVolunt (volunt: Voluntarios){
     )
 } // fim do deleteVolunt
 
-
-/*Tratamento de erros - realizar mais modificações aqui*/
+// tratamento de erros
 handleError(error: HttpErrorResponse){
   let msgError = '';
   if(error.error instanceof ErrorEvent){
