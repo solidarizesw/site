@@ -8,11 +8,13 @@
             <div class="form-group row">
                 <label for="nome-volunt" class="col-sm-2 col-form-label color-green">Nome:</label>
 
-                  <input type="text" [(ngModel)]="volunt.nome" id="nome-volunt" name="nome-volunt" #nome="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && nome.invalid }" class="form-control" placeholder="Nome Completo">
+                  <input type="text" minlength="3" maxlength="60" [(ngModel)]="volunt.nome" id="nome-volunt" name="nome-volunt" #nome="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && nome.invalid }" class="form-control" placeholder="Nome Completo">
 
                 <!-- Mensagens de erro: -->
                   <div *ngIf="f.submitted && nome.invalid" class="invalid-feedback">
                     <div *ngIf="nome.errors.required">Nome é obrigatório</div>
+                    <div *ngIf="nome.errors.minlength">Nome deve ter no mínimo 3 letras</div>
+                    <div *ngIf="nome.errors.maxlength">Nome deve ter no máximo 60 letras</div>
                 </div>
             </div>
 
@@ -21,13 +23,14 @@
             <div class="form-group">
                 <label for="email-volunt" class="col-sm-2 col-form-label color-green">Email:</label>
 
-                  <input type="text" [(ngModel)]="volunt.email" id="email-volunt" name="email-volunt" #email="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" placeholder="Email">
+                  <input type="email" pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)" [(ngModel)]="volunt.email" id="email-volunt" name="email-volunt" #email="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" placeholder="Email">
 
 
                 <!-- Mensagens de erro -->
 
                 <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
                     <div *ngIf="email.errors.required">Email é obrigatório</div>
+                    <div *ngIf="email.errors.pattern">Digite um email válido</div>
                 </div>
             </div>
 
@@ -90,13 +93,13 @@
             <!-- Status -->
             <div class="form-group">
               <label for="name-status" class="col-sm-2 col-form-label color-green">Status:</label>
-              <input class="form-control" required class="form-control" id="status-volunt" name="status-volunt" type="text" [(ngModel)]="volunt.status" #status="ngModel" [ngClass]="{ 'is-invalid': f.submitted && status.invalid }">
+              <input class="form-control" maxlength="200" required class="form-control" id="status-volunt" name="status-volunt" type="text" [(ngModel)]="volunt.status" #status="ngModel" [ngClass]="{ 'is-invalid': f.submitted && status.invalid }">
 
               <!-- Mensagens de erro -->
               <div *ngIf="f.submitted && motivacao.invalid" class="invalid-feedback">
-                <div *ngIf="motivacao.errors.required">Esse campo é obrigatório</div>
+                <div *ngIf="motivacao.errors.required">O campo de motivação é obrigatório</div>
+                <div *ngIf="motivacao.errors.maxlenght">Deve ter no máximo 200 letras.</div>
               </div>
-
             </div>
 
 
