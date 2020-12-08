@@ -5,18 +5,33 @@
 
         <h2 class= "color-green titulos">Cadastro de Projetos:</h2><br><br>
 
-        <form>
+        <form (ngSubmit)="f.form.valid && salvarProjeto(f)" #f="ngForm" novalidate>
+
           <div class="form-group row">
             <label for="nome-proj" class="col-sm-2 col-form-label color-green">Nome do Projeto:</label>
             <div class="col-sm-10">
-              <input type="email" class="form-control" id="nome-proj" name="nome-proj" placeholder="Nome do Projeto" required>
+              <input type="email" class="form-control" minlength="3" maxlength="60" [(ngModel)]="proj.nome" #nome="ngModel" required class="form-control" id="nome-proj" name="nome-proj" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" placeholder="Nome do Projeto" required>
             </div>
+
+            <!-- Mensagens de erro -->
+            <div *ngIf="f.submitted && nome.invalid" class="invalid-feedback">
+              <div *ngIf="nome.errors.required">Nome do Projeto é obrigatorio</div>
+              <div *ngIf="nome.errors.minlength">Nome do Projeto deve ter no mínimo 3 letras</div>
+              <div *ngIf="nome.errors.maxlength">Nome do Projeto deve ter no máximo 60 letras</div>
+            </div>
+
           </div>
 
           <div class="form-group row">
             <label for="email-proj" class="col-sm-2 col-form-label color-green">Email:</label>
             <div class="col-sm-10">
-              <input type="email" class="form-control" id="email-proj" name="email-proj" placeholder="Email" required>
+              <input type="email" pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)" [(ngModel)]="proj.email" #email="ngModel" class="form-control" id="email-proj" name="email-proj" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" placeholder="Email" required>
+            </div>
+
+            <!-- Mensagens de erro -->
+            <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+              <div *ngIf="email.errors.required">Email é obrigatório</div>
+              <div *ngIf="email.errors.pattern">Digite um email válido</div>
             </div>
           </div>
 
@@ -24,7 +39,12 @@
           <div class="form-group row">
             <label for="caixatxt-proj" class="col-sm-2 col-form-label color-green">Descrição:</label>
             <div class="col-sm-10">
-              <textarea id="caixatxt-proj" name="caixatxt-proj" class="md-textarea form-control" rows="3" required></textarea>
+              <textarea id="caixatxt-proj" [(ngModel)]="proj.descricao" #descricao="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && descricao.invalid }" name="caixatxt-proj" class="md-textarea form-control" rows="3" required  placeholder="Breve descrição sobre o projeto"></textarea>
+            </div>
+
+            <!-- Mensagens de erro -->
+            <div *ngIf="f.submitted && descricao.invalid" class="invalid-feedback">
+              <div *ngIf="descricao.errors.required">Esse campo é obrigatório</div>
             </div>
           </div>
 
