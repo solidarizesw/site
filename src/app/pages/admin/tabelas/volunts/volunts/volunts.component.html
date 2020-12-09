@@ -1,0 +1,41 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Gerenciamento de voluntarios</li>
+  </ol>
+</nav>
+<div class="container">
+  <div class="card list-car">
+    <h5 class="card-header">Lista de voluntarios</h5>
+    <div class="card-body">
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Email</th>
+              <th scope="col">Curso</th>
+              <th scope="col">Motivação</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let volunt of volunts">
+              <td>{{volunt.id}}</td>
+              <td>{{volunt.nome}}</td>
+              <td>{{volunt.email}}</td>
+              <td>{{volunt.curso}}</td>
+              <td>{{volunt.motivacao}}</td>
+              <td>{{volunt.status}}</td>
+              <td>
+                <button type="button" class="btn btn-warning btn-sm" (click)="editVolunt(volunt)">Editar</button>
+                <button type="button" class="btn btn-danger btn-sm ml-1" (click)="deleteVolunt(volunt)">Deletar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    </div>
+
+    <!-- Formulario para a atualização de voluntarios -->
+
+  </div>
