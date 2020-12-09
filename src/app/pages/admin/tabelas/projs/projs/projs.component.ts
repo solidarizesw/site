@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ProjetosService } from './../../../../../services/projetos.service';
 import { Projetos } from './../../../../../models/projetos';
-import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-projs',
