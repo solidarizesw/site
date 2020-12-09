@@ -1,24 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { VoluntariosService } from './../../services/voluntarios.service';
-import { Voluntarios } from './../../models/voluntarios';
+import { VoluntariosService } from './../../../../../services/voluntarios.service';
+import { Voluntarios } from './../../../../../models/voluntarios';
+
 
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  selector: 'app-volunts',
+  templateUrl: './volunts.component.html',
+  styleUrls: ['./volunts.component.scss']
 })
+export class VoluntsComponent implements OnInit {
 
-export class AdminComponent implements OnInit {
   volunt = {} as Voluntarios;
   volunts: Voluntarios[];
 
-
-  constructor(private voluntServ: VoluntariosService){ }
+  constructor(private voluntServ: VoluntariosService) { }
 
   ngOnInit() {
     this.getVolunt();
-
   }
 
   saveVolunt(form: NgForm){
@@ -58,6 +57,5 @@ export class AdminComponent implements OnInit {
     form.resetForm();
     this.volunt = {} as Voluntarios;
   }
-
 
 } // fim da classe

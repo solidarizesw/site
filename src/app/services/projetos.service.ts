@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Voluntarios } from './../models/voluntarios';
+import { Projetos } from './../models/projetos';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, pipe, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
@@ -8,66 +8,66 @@ import { retry, catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class VoluntariosService {
- url = 'http://localhost:3000/voluntarios';
+export class ProjetosService {
+  url = 'http://localhost:3000/projetos';
 
 constructor(private HttpClient: HttpClient) { }
   // headers
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
-  }// fim do httpOptions
+  }
 
   // Mostra todos os voluntarios
-getVolunt(): Observable<Voluntarios[]>{
-  return this.HttpClient.get<Voluntarios[]>(this.url)
+getProj(): Observable<Projetos[]>{
+  return this.HttpClient.get<Projetos[]>(this.url)
     .pipe(
       retry(2),
       catchError(this.handleError)
     )
 
-} // fim do getVolunt
+} // fim do getProj
 
-// Obter voluntario pelo id
-getVoluntId(id: number): Observable<Voluntarios>{
-  return this.HttpClient.get<Voluntarios>(this.url + '/' + id)
+// Obter projeto pelo id
+getProjId(id: number): Observable<Projetos>{
+  return this.HttpClient.get<Projetos>(this.url + '/' + id)
   .pipe(
     retry(2),
     catchError(this.handleError)
   )
-} // fim do getVoluntId
+} // fim do getProjId
 
-// salvar voluntario
-saveVolunt(volunt: Voluntarios): Observable<Voluntarios>{
-  return this.HttpClient.post<Voluntarios>(this.url, JSON.stringify(volunt), this.httpOptions)
+// salvar projeto
+saveProj(proj: Projetos): Observable<Projetos>{
+  return this.HttpClient.post<Projetos>(this.url, JSON.stringify(proj), this.httpOptions)
     .pipe(
       retry(2),
       catchError(this.handleError)
     )
-} // fim do saveVolunt
+} // fim do saveProj
 
-// atualizar voluntario
-updateVolunt(volunt: Voluntarios): Observable<Voluntarios>{
-  return this.HttpClient.put<Voluntarios>(this.url + '/' + volunt.id, JSON.stringify(volunt), this.httpOptions)
+// atualizar projeto
+updateProj(proj: Projetos): Observable<Projetos>{
+  return this.HttpClient.put<Projetos>(this.url + '/' + proj.id, JSON.stringify(proj), this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)
     )
-} // fim do updateVolunt
+} // fim do updateProj
 
-// apagar voluntario
-deleteVolunt (volunt: Voluntarios){
-  return this.HttpClient.delete<Voluntarios>(this.url + '/' + volunt.id, this.httpOptions)
+// apagar projeto
+deleteProj (proj: Projetos){
+  return this.HttpClient.delete<Projetos>(this.url + '/' + proj.id, this.httpOptions)
     .pipe(
       retry(2),
       catchError(this.handleError)
     )
-} // fim do deleteVolunt
+} // fim do deleteProj
 
 // tratamento de erros
 handleError(error: HttpErrorResponse){
   let msgError = '';
   if(error.error instanceof ErrorEvent){
-    // erro do voluntario
+    // erro do usuario
     msgError = error.error.message;
   }else{
     // erro no servidor
@@ -77,4 +77,5 @@ handleError(error: HttpErrorResponse){
 
 }; // fim do tratamento
 
-} // fim da classe
+
+} // fim do service

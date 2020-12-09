@@ -4,30 +4,33 @@
         <div class="col-lg-8 mx-auto">
           <h2 class="color-green titulos">Participe!</h2><br>
 
-          <form id="add-form" (ngSubmit)="f.form.valid && salvarVoluntario(f)" #f="ngForm" novalidate>
+          <form id="volunt-form" (ngSubmit)="f.form.valid && salvarVoluntario(f)" #f="ngForm" novalidate>
             <div class="form-group row">
                 <label for="nome-volunt" class="col-sm-2 col-form-label color-green">Nome:</label>
 
-                  <input type="text" [(ngModel)]="volunt.nome" id="nome-volunt" name="nome-volunt" #nome="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && nome.invalid }" class="form-control" placeholder="Nome Completo">
+                  <input type="text" minlength="3" maxlength="60" [(ngModel)]="volunt.nome" id="nome-volunt" name="nome-volunt" #nome="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && nome.invalid }" class="form-control" placeholder="Nome Completo">
 
                 <!-- Mensagens de erro: -->
                   <div *ngIf="f.submitted && nome.invalid" class="invalid-feedback">
                     <div *ngIf="nome.errors.required">Nome é obrigatório</div>
-                </div>
+                    <div *ngIf="nome.errors.minlength">Nome deve ter no mínimo 3 letras</div>
+                    <div *ngIf="nome.errors.maxlength">Nome deve ter no máximo 60 letras</div>
+                  </div>
             </div>
 
             <!-- Email -->
 
             <div class="form-group">
-                <label for="email-volunt" class="col-sm-2 col-form-label color-green">Email</label>
+                <label for="email-volunt" class="col-sm-2 col-form-label color-green">Email:</label>
 
-                  <input type="text" [(ngModel)]="volunt.email" id="email-volunt" name="email-volunt" #email="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" placeholder="Email">
+                  <input type="email" pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)" [(ngModel)]="volunt.email" id="email-volunt" name="email-volunt" #email="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" placeholder="Email">
 
 
                 <!-- Mensagens de erro -->
 
                 <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
                     <div *ngIf="email.errors.required">Email é obrigatório</div>
+                    <div *ngIf="email.errors.pattern">Digite um email válido</div>
                 </div>
             </div>
 
@@ -38,30 +41,31 @@
                 <div class="col-sm-10">
 
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="curso" id="sist-comp" value="sistema-computacao" checked>
+                    <input class="form-check-input" type="radio" [(ngModel)]="volunt.curso" #curso="ngModel" required class="form-check-input" [ngClass]="{ 'is-invalid': f.submitted && curso.invalid }" name="curso" id="sist-comp" value="Ciência da Computação" checked>
                     <label class="form-check-label" for="sist-comp">
                       Ciência da Computação
                     </label>
                   </div>
 
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="curso" id="sist-inf" value="sistema-informacao">
+                    <input class="form-check-input" type="radio" [(ngModel)]="volunt.curso" #curso="ngModel" required class="form-check-input" [ngClass]="{ 'is-invalid': f.submitted && curso.invalid }" name="curso" id="sist-comp" value="Sistemas de Computação">
                     <label class="form-check-label" for="sist-inf">
                       Sistemas de Computação
                     </label>
                   </div>
 
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="curso" id="ciencia-comp" value="ciencia-computacao">
+                    <input class="form-check-input" type="radio" [(ngModel)]="volunt.curso" #curso="ngModel" required class="form-check-input" [ngClass]="{ 'is-invalid': f.submitted && curso.invalid }" name="curso" id="sist-comp" value="Sistemas de Informação">
                     <label class="form-check-label" for="ciencia-comp">
                       Sistemas de Informação
                     </label>
                   </div>
 
                   <div class="form-check disabled">
-                    <input type="radio" name="curso" id="curso" value="others" class="form-check-input">
-                    <input type="curso-outro" name="curso-outro" type="text" value="" placeholder="Outro" class="form-check-label">
+                    <input class="form-check-input" type="radio" name="curso" id="outro-curso">
+                    <input class="form-control" type="text" id="outro-curso" name="curso" [(ngModel)]="volunt.curso" #curso="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && curso.invalid }" value="" placeholder="Outro Curso">
                   </div>
+
                 </div>
               </div>
             </fieldset>
@@ -77,18 +81,30 @@
 
             <!-- Caixa de texto -->
             <div class="form-group">
-              <label for="caixatxt-volunt" class="col-sm-2 col-form-label color-green">Motivação</label>
-              <textarea id="caixatxt-volunt" class="md-textarea form-control" [(ngModel)]="volunt.motivacao" #motivacao="ngModel" [ngClass]="{ 'is-invalid': f.submitted && motivacao.invalid }" rows="3" placeholder="Seus interesses e motivações para participar do projeto" required></textarea>
-            <!-- Mensagem de erro -->
-            <div *ngIf="f.submitted && motivacao.invalid" class="invalid-feedback">
-              <div *ngIf="motivacao.errors.required">Esse campo é obrigatório</div>
+              <label for="caixatxt" class="col-sm-2 col-form-label color-green">Motivação:</label>
+              <textarea [(ngModel)]="volunt.motivacao" id="caixatxt" name="caixatxt" #motivacao="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && motivacao.invalid }" class="form-control"  placeholder="Seus interesses e motivações para participar do projeto"></textarea>
+
+              <!-- Mensagens de erro -->
+              <div *ngIf="f.submitted && motivacao.invalid" class="invalid-feedback">
+                <div *ngIf="motivacao.errors.required">Esse campo é obrigatório</div>
+              </div>
             </div>
 
+            <!-- Status -->
+            <div class="form-group">
+              <label for="name-status" class="col-sm-2 col-form-label color-green">Status:</label>
+              <input class="form-control" maxlength="200" required class="form-control" id="status-volunt" name="status-volunt" type="text" [(ngModel)]="volunt.status" #status="ngModel" [ngClass]="{ 'is-invalid': f.submitted && status.invalid }">
+
+              <!-- Mensagens de erro -->
+              <div *ngIf="f.submitted && motivacao.invalid" class="invalid-feedback">
+                <div *ngIf="motivacao.errors.required">O campo de motivação é obrigatório</div>
+                <div *ngIf="motivacao.errors.maxlenght">Deve ter no máximo 200 letras.</div>
+              </div>
             </div>
 
+            <button type="submit" class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect">Enviar</button>
 
 
-            <button type="submit" class="btn btn-primary btn-add-car">Salvar</button>
           </form>
         </div>
         </div>
