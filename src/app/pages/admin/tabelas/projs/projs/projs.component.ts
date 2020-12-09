@@ -24,7 +24,7 @@ export class ProjsComponent implements OnInit {
         this.cleanForm(form);
       });
     }else{
-      this.projServ.saveVolunt(this.proj).subscribe(() => {
+      this.projServ.saveProj(this.proj).subscribe(() => {
         this.cleanForm(form);
       });
     }
