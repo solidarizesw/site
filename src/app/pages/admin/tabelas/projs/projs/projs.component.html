@@ -1,3 +1,39 @@
-<p>
-  projs works!
-</p>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Gerenciamento de Projetos</li>
+  </ol>
+</nav>
+<div class="container">
+  <div class="card list-car">
+    <h5 class="card-header">Lista de projetos</h5>
+    <div class="card-body">
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Email</th>
+              <th scope="col">Descrição</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let proj of projs">
+              <td>{{proj.id}}</td>
+              <td>{{proj.nome}}</td>
+              <td>{{proj.email}}</td>
+              <td>{{proj.descricao}}</td>
+              <td>{{proj.status}}</td>
+              <td>
+                <button type="button" class="btn btn-warning btn-sm" (click)="editProj(volunt)">Editar</button>
+                <button type="button" class="btn btn-danger btn-sm ml-1" (click)="deleteProj(volunt)">Deletar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    </div>
+
+    <!-- Formulario para a atualização de projetos -->
+
+  </div>
