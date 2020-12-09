@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { VoluntariosService } from './../../../../../services/voluntarios.service';
 import { Voluntarios } from './../../../../../models/voluntarios';
-import { NgForm } from '@angular/forms';
-
 
 
 @Component({
@@ -41,23 +40,22 @@ export class VoluntsComponent implements OnInit {
   } // fim do getVolunt
 
   // servico para apagar um dos voluntarios
-deleteVolunt(volunt: Voluntarios){
-  this.voluntServ.deleteVolunt(volunt).subscribe(() =>{
+  deleteVolunt(volunt: Voluntarios){
+    this.voluntServ.deleteVolunt(volunt).subscribe(() =>{
     this.getVolunt();
-  });
-} // fim do deleteVolunt
+   });
+  } // fim do deleteVolunt
 
-// edição de algum dado fornecido pelo voluntario
-editVolunt(volunt: Voluntarios){
-  this.volunt = { ...volunt };
-} // fim do editVolunt
+  // edição de algum dado fornecido pelo voluntario
+  editVolunt(volunt: Voluntarios){
+    this.volunt = { ...volunt };
+  } // fim do editVolunt
 
-// limpar o formulario
-cleanForm(form: NgForm){
-  this.getVolunt();
-  form.resetForm();
-  this.volunt = {} as Voluntarios;
-}
-
+  // limpar o formulario
+  cleanForm(form: NgForm){
+    this.getVolunt();
+    form.resetForm();
+    this.volunt = {} as Voluntarios;
+  }
 
 } // fim da classe
