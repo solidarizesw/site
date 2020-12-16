@@ -21,12 +21,16 @@ export class VoluntariosComponent implements OnInit {
 
   // apenas salvar o voluntario
   salvarVoluntario(form: NgForm){
-    if(this.volunt.id == undefined){
+    if(this.volunt.id !== undefined){
+      this.voluntServ.updateVolunt(this.volunt).subscribe(() => {
+        this.cleanForm(form);
+      });
+    }else{
       this.voluntServ.saveVolunt(this.volunt).subscribe(() => {
         this.cleanForm(form);
       });
     }
-  }
+  } // fim do sakvarVoluntario
 
   // mostra todos os voluntarios registrados
   getVolunt(){

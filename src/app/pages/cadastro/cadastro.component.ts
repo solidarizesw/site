@@ -21,12 +21,16 @@ export class CadastroComponent implements OnInit {
 
   // apenas salvar o projeto
   salvarProjeto(form: NgForm){
-    if(this.proj.id == undefined){
+    if(this.proj.id !== undefined){
+      this.projServ.updateProj(this.proj).subscribe(() => {
+        this.cleanForm(form);
+      });
+    }else{
       this.projServ.saveProj(this.proj).subscribe(() => {
         this.cleanForm(form);
       });
     }
-  }
+  } // fim do salvarProjeto
 
   // mostra todos os projetos registrados
   getProj(){

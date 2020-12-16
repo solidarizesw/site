@@ -19,7 +19,7 @@ export class TableVoluntComponent implements OnInit {
     this.getVolunt();
   }
 
-  saveVolunt(form: NgForm){
+  salvarVoluntario(form: NgForm){
     if(this.volunt.id !== undefined){
       this.voluntServ.updateVolunt(this.volunt).subscribe(() => {
         this.cleanForm(form);
