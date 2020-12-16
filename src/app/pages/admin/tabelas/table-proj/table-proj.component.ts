@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ProjetosService } from './../../../../../services/projetos.service';
-import { Projetos } from './../../../../../models/projetos';
-
+import { Projetos } from './../../../../models/projetos';
+import { ProjetosService } from './../../../../services/projetos.service';
 
 @Component({
-  selector: 'app-projs',
-  templateUrl: './projs.component.html',
-  styleUrls: ['./projs.component.scss']
+  selector: 'app-table-proj',
+  templateUrl: './table-proj.component.html',
+  styleUrls: ['./table-proj.component.scss']
 })
-export class ProjsComponent implements OnInit {
+export class TableProjComponent implements OnInit {
+
   proj = {} as Projetos;
   projs: Projetos[];
 
@@ -18,7 +18,6 @@ export class ProjsComponent implements OnInit {
   ngOnInit() {
     this.getProj();
   }
-
   saveProj(form: NgForm){
     if(this.proj.id !== undefined){
       this.projServ.updateProj(this.proj).subscribe(() => {
@@ -56,4 +55,5 @@ cleanForm(form: NgForm){
   form.resetForm();
   this.proj = {} as Projetos;
 }
+
 } // fim da classe

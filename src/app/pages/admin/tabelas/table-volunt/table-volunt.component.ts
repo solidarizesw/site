@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { VoluntariosService } from './../../../../../services/voluntarios.service';
-import { Voluntarios } from './../../../../../models/voluntarios';
-
+import { Voluntarios } from './../../../../models/voluntarios';
+import { VoluntariosService } from './../../../../services/voluntarios.service';
 
 @Component({
-  selector: 'app-volunts',
-  templateUrl: './volunts.component.html',
-  styleUrls: ['./volunts.component.scss']
+  selector: 'app-table-volunt',
+  templateUrl: './table-volunt.component.html',
+  styleUrls: ['./table-volunt.component.scss']
 })
-export class VoluntsComponent implements OnInit {
+export class TableVoluntComponent implements OnInit {
 
   volunt = {} as Voluntarios;
   volunts: Voluntarios[];
