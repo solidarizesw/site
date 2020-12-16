@@ -6,15 +6,7 @@
       "email": "matheus@gmail.com",
       "curso": "Ciência da Computação",
       "motivacao": "colocar alguma coisa aqui",
-      "status": "em análise"
-    },
-    {
-      "id": 3,
-      "nome": "Fernanda",
-      "email": "fernanda@gmail.com",
-      "curso": "Sistemas de Computação",
-      "motivacao": "unico aprovado até o momento",
-      "status": "aprovado"
+      "status": "reprovado"
     },
     {
       "nome": "Marisa",
