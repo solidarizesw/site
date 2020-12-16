@@ -11,8 +11,8 @@ import { VoluntariosComponent } from './pages/voluntarios/voluntarios.component'
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AdminComponent } from './pages/admin/admin.component';
-import { ProjsComponent } from './pages/projs/projs.component';
-import { TableVoluntComponent } from './pages/table-volunt/table-volunt.component';
+import { TableVoluntComponent } from './pages/admin/tabelas/table-volunt/table-volunt.component';
+import { TableProjComponent } from './pages/admin/tabelas/table-proj/table-proj.component';
 
 
 const routes: Routes = [
@@ -25,7 +25,7 @@ const routes: Routes = [
   {path : 'contato', component: ContatoComponent},
   {path : 'admin', component: AdminComponent},
   {path : 'login', component: LoginComponent},
-  {path : 'projs', component: ProjsComponent},
+  {path : 'projs', component: TableProjComponent},
   {path : 'tstvolunts', component: TableVoluntComponent},
 
 ];
