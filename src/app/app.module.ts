@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,7 @@ import { FormsModule } from '@angular/forms';
     VoluntariosComponent,
     ParticipantesComponent,
     AdminComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
