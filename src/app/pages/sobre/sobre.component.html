@@ -2,12 +2,51 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          
+
           <h2 class= "color-green titulos">Sobre o Projeto:</h2>
-          
+
           <p class="lead center">Solidarize-sw é um projeto realizado por estudantes de tecnologia da Universidade Federal Flumimense (UFF) com o intuito de utilizar ferramentas estudadas durante a sua formação em prol de ações sociais para a sociedade em que vivemos. </p>
-          
+
         </div>
       </div>
     </div>
   </section>
+
+  <!-- testando tabela-->
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Gerenciamento de voluntários</li>
+    </ol>
+  </nav>
+  <div class="container">
+    <div class="card list-car">
+      <h5 class="card-header">Lista de voluntários</h5>
+      <div class="card-body">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Curso</th>
+                <th scope="col">Motivação</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let volunt of volunts">
+                <td>{{volunt.id}}</td>
+                <td>{{volunt.nome}}</td>
+                <td>{{volunt.email}}</td>
+                <td>{{volunt.curso}}</td>
+                <td>{{volunt.motivacao}}</td>
+                <td>{{volunt.status}}</td>
+                <td>
+                  <button type="button" class="btn btn-warning btn-sm" (click)="editVolunt(volunt)">Editar</button>
+                  <button type="button" class="btn btn-danger btn-sm ml-1" (click)="deleteVolunt(volunt)">Deletar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      </div>
