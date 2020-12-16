@@ -12,7 +12,6 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { ProjsComponent } from './pages/projs/projs.component';
-import { TesteComponent } from './pages/teste/teste.component';
 
 
 const routes: Routes = [
@@ -26,7 +25,6 @@ const routes: Routes = [
   {path : 'admin', component: AdminComponent},
   {path : 'login', component: LoginComponent},
   {path : 'projs', component: ProjsComponent},
-  {path : 'teste', component: TesteComponent},
 
 ];
 
