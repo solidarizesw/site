@@ -20,7 +20,6 @@ export class AdminComponent implements OnInit {
     this.getVolunt();
 
   }
-
   saveVolunt(form: NgForm){
     if(this.volunt.id !== undefined){
       this.voluntServ.updateVolunt(this.volunt).subscribe(() => {
@@ -61,3 +60,6 @@ export class AdminComponent implements OnInit {
 
 
 } // fim da classe
+
+
+
