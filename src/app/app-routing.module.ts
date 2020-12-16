@@ -12,6 +12,7 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { ProjsComponent } from './pages/projs/projs.component';
+import { TableVoluntComponent } from './pages/table-volunt/table-volunt.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path : 'admin', component: AdminComponent},
   {path : 'login', component: LoginComponent},
   {path : 'projs', component: ProjsComponent},
+  {path : 'tstvolunts', component: TableVoluntComponent},
 
 ];
 
