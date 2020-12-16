@@ -47,8 +47,9 @@
             <form id="volunt-form" (ngSubmit)="f.form.valid && salvarVoluntario(f)" #f="ngForm" novalidate>
               <div class="form-group row">
                   <label for="nome-volunt" class="col-sm-2 col-form-label color-green">Nome:</label>
-
+                  <div class="col-sm-10">
                     <input type="text" minlength="3" maxlength="60" [(ngModel)]="volunt.nome" id="nome-volunt" name="nome-volunt" #nome="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && nome.invalid }" class="form-control" placeholder="Nome Completo">
+                  </div>
 
                   <!-- Mensagens de erro: -->
                     <div *ngIf="f.submitted && nome.invalid" class="invalid-feedback">
@@ -62,9 +63,9 @@
 
               <div class="form-group">
                   <label for="email-volunt" class="col-sm-2 col-form-label color-green">Email:</label>
-
+                  <div class="col-sm-10">
                     <input type="email" pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)" [(ngModel)]="volunt.email" id="email-volunt" name="email-volunt" #email="ngModel" required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" placeholder="Email">
-
+                  </div>
 
                   <!-- Mensagens de erro -->
 
@@ -133,18 +134,18 @@
               <!-- Status -->
               <div class="form-group">
                 <label for="name-status" class="col-sm-2 col-form-label color-green">Status:</label>
-                <input class="form-control" maxlength="200" required class="form-control" id="status-volunt" name="status-volunt" type="text" [(ngModel)]="volunt.status" #status="ngModel" [ngClass]="{ 'is-invalid': f.submitted && status.invalid }">
+                <div class="col-sm-10">
+                  <input class="form-control" maxlength="200" required class="form-control" id="status-volunt" name="status-volunt" type="text" [(ngModel)]="volunt.status" #status="ngModel" [ngClass]="{ 'is-invalid': f.submitted && status.invalid }">
+                </div>
 
                 <!-- Mensagens de erro -->
-                <div *ngIf="f.submitted && motivacao.invalid" class="invalid-feedback">
-                  <div *ngIf="motivacao.errors.required">O campo de motivação é obrigatório</div>
-                  <div *ngIf="motivacao.errors.maxlenght">Deve ter no máximo 200 letras.</div>
+                <div *ngIf="f.submitted && status.invalid" class="invalid-feedback">
+                  <div *ngIf="status.errors.required">O campo de motivação é obrigatório</div>
+                  <div *ngIf="status.errors.maxlenght">Deve ter no máximo 60 letras.</div>
                 </div>
               </div>
 
               <button type="submit" class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect">Enviar</button>
-
-
             </form>
           </div>
           </div>
