@@ -61,6 +61,7 @@
 
               <div class="form-group row">
                 <label for="email-proj" class="col-sm-2 col-form-label color-green">Email:</label>
+
                 <div class="col-sm-10">
                   <input type="email" pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)" [(ngModel)]="proj.email" #email="ngModel" class="form-control" id="email-proj" name="email-proj" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" placeholder="Email" required>
                 </div>
