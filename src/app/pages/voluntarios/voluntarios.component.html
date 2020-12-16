@@ -96,9 +96,8 @@
               <input class="form-control" maxlength="200" required class="form-control" id="status-volunt" name="status-volunt" type="text" [(ngModel)]="volunt.status" #status="ngModel" [ngClass]="{ 'is-invalid': f.submitted && status.invalid }">
 
               <!-- Mensagens de erro -->
-              <div *ngIf="f.submitted && motivacao.invalid" class="invalid-feedback">
-                <div *ngIf="motivacao.errors.required">O campo de motivação é obrigatório</div>
-                <div *ngIf="motivacao.errors.maxlenght">Deve ter no máximo 200 letras.</div>
+              <div *ngIf="f.submitted && status.invalid" class="invalid-feedback">
+                <div *ngIf="status.errors.required">O campo de motivação é obrigatório</div>
               </div>
             </div>
 
