@@ -12,7 +12,8 @@ import { VoluntariosComponent } from './pages/voluntarios/voluntarios.component'
 import { ParticipantesComponent } from './pages/participantes/participantes.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { LoginComponent } from './pages/login/login.component';
-import { TableVoluntComponent } from './pages/table-volunt/table-volunt.component';
+import { TableVoluntComponent } from './pages/admin/tabelas/table-volunt/table-volunt.component';
+import { TableProjComponent } from './pages/admin/tabelas/table-proj/table-proj.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
@@ -31,6 +32,7 @@ import { FormsModule } from '@angular/forms';
     AdminComponent,
     LoginComponent,
     TableVoluntComponent,
+    TableProjComponent,
   ],
   imports: [
     BrowserModule,
