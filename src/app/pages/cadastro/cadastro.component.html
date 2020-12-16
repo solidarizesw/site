@@ -48,6 +48,20 @@
             </div>
           </div>
 
+          <!-- Status -->
+          <div class="form-group">
+            <label for="name-status" class="col-sm-2 col-form-label color-green">Status:</label>
+            <div class="col-sm-10">
+              <input class="form-control" maxlength="200" required class="form-control" id="status-proj" name="status-proj" type="text" [(ngModel)]="proj.status" #status="ngModel" [ngClass]="{ 'is-invalid': f.submitted && status.invalid }">
+            </div>
+
+             <!-- Mensagens de erro -->
+            <div *ngIf="f.submitted && status.invalid" class="invalid-feedback">
+              <div *ngIf="status.errors.required">O campo de motivação é obrigatório</div>
+              <div *ngIf="status.errors.maxlenght">Deve ter no máximo 60 letras.</div>
+            </div>
+          </div>
+
           <!-- Botão -->
           <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Enviar</button>
 
