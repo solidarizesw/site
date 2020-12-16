@@ -6,6 +6,13 @@
       "email": "solidarizesw@gmail.com",
       "descricao": "Projeto de extensão.",
       "status": "aprovado"
+    },
+    {
+      "nome": "Projeto 2",
+      "email": "projeto2@gmail.com",
+      "descricao": "Testando um segundo insert.",
+      "id": 2,
+      "status": "aprovado"
     }
   ]
 }
