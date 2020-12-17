@@ -26,7 +26,7 @@ const routes: Routes = [
   {path : 'admin', component: AdminComponent},
   {path : 'login', component: LoginComponent},
   {path : 'projs', component: TableProjComponent},
-  {path : 'tstvolunts', component: TableVoluntComponent},
+  {path : 'volunts', component: TableVoluntComponent},
 
 ];
 

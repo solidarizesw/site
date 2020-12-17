@@ -22,6 +22,7 @@ export class TableVoluntComponent implements OnInit {
   salvarVoluntario(form: NgForm){
     if(this.volunt.id !== undefined){
       this.voluntServ.updateVolunt(this.volunt).subscribe(() => {
+        alert(`O voluntário foi atualizado com sucesso.`);
         this.cleanForm(form);
       });
     }else{

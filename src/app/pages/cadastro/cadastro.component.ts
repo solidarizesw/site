@@ -27,6 +27,7 @@ export class CadastroComponent implements OnInit {
       });
     }else{
       this.projServ.saveProj(this.proj).subscribe(() => {
+        alert(`O projeto foi cadastrado com sucesso.`);
         this.cleanForm(form);
       });
     }
