@@ -21,6 +21,7 @@ export class TableProjComponent implements OnInit {
   salvarProjeto(form: NgForm){
     if(this.proj.id !== undefined){
       this.projServ.updateProj(this.proj).subscribe(() => {
+        alert(`O projeto foi atualizado com sucesso.`);
         this.cleanForm(form);
       });
     }else{
