@@ -27,6 +27,7 @@ export class VoluntariosComponent implements OnInit {
       });
     }else{
       this.voluntServ.saveVolunt(this.volunt).subscribe(() => {
+        alert(`O voluntário foi cadastrado com sucesso.`);
         this.cleanForm(form);
       });
     }
